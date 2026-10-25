@@ -1,3 +1,4 @@
+# Los Angeles Crime Arrest Analysis
 | | |
 | --- | --- |
 | **School:** | UC Berkeley Engineering |
@@ -5,8 +6,8 @@
 | **Session:** | April 2026 |
 | **Assignment:** | Required Capstone Project 24.1: Final Report |
 | **Project:** | Los Angeles Crime Arrest Analysis |
-| **Student Name** | Ray Fuller, Ph.D. |
-| **Date of Submission** | 29 October 2026 |
+| **Student Name:** | Ray Fuller, Ph.D. |
+| **Date of Submission:** | 29 October 2026 |
 
 ## Summary
 

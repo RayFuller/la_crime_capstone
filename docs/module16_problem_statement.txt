@@ -1,0 +1,54 @@
+Capstone Assignment 16.1: Finalizing Your Problem Statement
+
+University: University of California, Berkeley, School of Engineering
+Program: Machine Learning & AI Professional Certification Program
+Term: Spring Term, April 2026
+Submission Date: 8/27/2026
+Name: Ray Fuller, Ph.D.
+Source Data: Los Angeles Open Data Portal
+Crime Data, years 2010 thru 2019 and Crime Data, years 2020 thru 2024
+
+RESEARCH QUESTION
+
+I will investigate which characteristics of reported crime incidents in Los Angeles are associated with an arrest. Specifically, I will examine whether crime type, timing, location, premise type, weapon use, and victim demographics help predict whether a reported crime ends in an arrest.
+
+WHY THIS MATTERS
+
+A very high percentage of reported crimes do not result in an arrest. Since some types of crimes are more likely to have an arrest than others, that is expected. However, different areas experience different mixes of crime, and victims from certain demographic groups may also experience different circumstances. Controlling for crime type will help measure any additional effects more fairly.
+
+This question matters because raw arrest-rate comparisons can be misleading. A more careful analysis can help show whether differences in arrest rates are really tied to location, victim characteristics, or simply the types of crimes being reported.
+
+DATA SOURCE
+
+I will use incident-level crime records from the City of Los Angeles Open Data Portal, covering at least ten years of historical data. The fields I expect to use include:
+
+- Case outcome or status, which I will convert to a binary label: arrested or not arrested
+- Type of crime, both coded and descriptive
+- Date and time of occurrence, plus date reported
+- Location, including police area/district and latitude/longitude
+- Place type, such as street, residence, store, or parking lot
+- Weapon used, if any
+- Victim demographics, including age, sex, and descent
+
+EXPECTED CHALLENGES
+
+I expect the data to contain missing victim demographics, dummy values such as age = 0, and possibly invalid geographic coordinates such as latitude = 0. I will first determine what each type of missing or invalid value means before deciding how to handle it.
+
+I also expect the dataset to contain a couple million records and approximately 25 to 30 columns. Based on past research, I believe the overall arrest rate will be low, probably close to 10%. For that reason, this will be an imbalanced classification problem.
+
+TECHNIQUES I EXPECT TO USE
+
+- Grouped rate analysis to identify potential predictors
+- Supervised model comparison in scikit-learn pipelines
+- K-means clustering on location and timing
+- Cross-validated grid search for tuning where appropriate
+
+For supervised models, I plan to compare logistic regression, decision trees, random forest, and K-nearest neighbors. Logistic regression will remain important as an interpretable baseline because it gives a direct estimate of how predictors are associated with arrest probability.
+
+EXPECTED RESULTS
+
+I expect to identify which incident characteristics are most associated with an arrest, and whether some neighborhoods or demographic groups appear different only because they experience different kinds of crime. Because the classes are imbalanced, I will evaluate models using precision, recall, F1 score, average precision, and related imbalance-aware metrics rather than accuracy alone.
+
+OVERALL GOAL
+
+The goal is to build a defensible, interpretable analysis of arrest outcomes that can be explained in plain language and that helps show where observed differences are likely coming from.

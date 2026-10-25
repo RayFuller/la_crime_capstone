@@ -61,9 +61,12 @@ Which details about a reported crime in Los Angeles are related to whether an
 arrest is recorded? I look at crime type, time, police area, type of place, weapon
 involvement, victim details and whether more than one offense was listed.
 
-This report covers cleaning, exploratory data analysis (EDA), feature
-engineering and a retrospective model comparison. The goal is to describe
-patterns in these records.
+A very high share of reported crimes never leads to a recorded arrest, and
+raw arrest-rate comparisons across areas or victim groups can mislead because
+different areas see different mixes of crime. A more careful look at which
+incident details track with an arrest can help a records office, an analyst or
+a city council member tell apart what is explained by the crime itself from
+what is not, before drawing conclusions about location or demographics.
 
 ## Submission notebooks
 

@@ -38,9 +38,14 @@ victim groups.
 - **Time of day matters more than time of year.** Arrest rates peak in the
   early morning hours, roughly 1 to 3 AM, and bottom out around midday.
   Month-to-month differences are small by comparison.
-- **Police area spans 7.6% to 14.9%**, with Harbor highest. I read this as
-  differences in the mix of crimes reported in each area, not as a measure of
-  police performance.
+- **Police area spans 7.6% to 14.9%, and crime mix does not explain it.** I
+  expected the spread to shrink once each area's crime mix was scored at
+  citywide rates. It did not; it reordered. The South LA divisions with the
+  most violent crime (77th Street, Central, Southeast, Newton) come in two to
+  three points below what their crime mix predicts, and Harbor and the Valley
+  divisions come in two to four points above. I do not read this as police
+  performance; it could be case volume, reporting practice, or how case status
+  gets recorded. But it is not an artifact of what gets reported where.
 - **Reports listing more than one offense are far more likely to show an
   arrest.** Part of this is probably circular: an arrest generates charges, and
   charges add offense codes to the report.
@@ -203,8 +208,9 @@ The cleaning notebook explains the checks and counts.
   **2,671,714 (89.39%)** do not. Because one outcome is much more common, accuracy
   alone will not be enough to judge a future model.
 - Observed police-area arrest rates range from **7.57% to 14.94%**, with Harbor
-  highest. These rates do not account for differences in crime type and are not
-  measures of police effectiveness.
+  highest. Scoring each area's crime mix at citywide rates does not shrink the
+  spread; the unexplained gaps run from **+4.08 points** (Harbor) to **-3.44
+  points** (77th Street). These gaps are not measures of police effectiveness.
 - Recorded weapon involvement has a **19.15%** arrest rate, versus **6.24%**
   without recorded involvement. The source includes bodily force among weapon
   descriptions; the grouping is broader than firearms.
@@ -239,7 +245,7 @@ chronological fit/validation split. A separate check changed test ages and
 premise categories and confirmed that this did not change the training median or
 training premise groups.
 
-There are **nine EDA figures** and **eight feature-engineering figures**, including
+There are **ten EDA figures** and **eight feature-engineering figures**, including
 age-imputation comparisons, categorical reduction, encoding and split diagnostics.
 The model-comparison notebook contains ten additional figures.
 
@@ -334,6 +340,8 @@ for other incident characteristics.
 ### Selected plots
 
 ![Feature-engineering category reduction](images/features_category_reduction.png)
+
+![Observed vs crime-mix-expected arrest rate by area](images/arrest_rate_by_area_adjusted.png)
 
 ![Chronological split and outcome balance](images/features_chronological_split.png)
 

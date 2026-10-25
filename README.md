@@ -49,6 +49,10 @@ victim groups.
 - **Reports listing more than one offense are far more likely to show an
   arrest.** Part of this is probably circular: an arrest generates charges, and
   charges add offense codes to the report.
+- **The unexplained gap is geographic.** On a map, the divisions recording
+  more arrests than their crime mix predicts are the Valley and Harbor; those
+  recording fewer are the Westside, the central basin and South LA. 
+  The split follows bureau boundaries more than crime rates. I cannot test why here.
 - **Incident details only weakly predict arrest.** The best model finds about
   55% of recorded arrests while being right roughly one time in four. What
   determines an arrest appears to lie mostly downstream of the report: witness
@@ -99,6 +103,7 @@ Data come from the City of Los Angeles Open Data Portal:
 
 - [Crime Data from 2010 to 2019](https://data.lacity.org/Public-Safety/Crime-Data-from-2010-to-2019/63jg-8b9z)
 - [Crime Data from 2020 to 2024](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-2024/2nrs-mtv8)
+- [LAPD Divisions boundaries](https://geohub.lacity.org/) from the Los Angeles GeoHub, saved as `docs/lapd_divisions.geojson`
 
 The local CSV files are dated **July 26, 2026**. I keep incidents occurring from
 January 1, 2010 through February 29, 2024, so 2024 covers only two months.
@@ -245,7 +250,7 @@ chronological fit/validation split. A separate check changed test ages and
 premise categories and confirmed that this did not change the training median or
 training premise groups.
 
-There are **ten EDA figures** and **eight feature-engineering figures**, including
+There are **eleven EDA figures** and **eight feature-engineering figures**, including
 age-imputation comparisons, categorical reduction, encoding and split diagnostics.
 The model-comparison notebook contains ten additional figures.
 
@@ -338,6 +343,8 @@ use the validation-selected neural network; their differences are not adjusted
 for other incident characteristics.
 
 ### Selected plots
+
+![Arrest rate and unexplained gap by LAPD division](images/arrest_rate_map.png)
 
 ![Feature-engineering category reduction](images/features_category_reduction.png)
 

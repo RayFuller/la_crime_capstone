@@ -18,6 +18,43 @@ incident details to identify records likely to contain an arrest.
 I compare the models on later records and check the selected model across
 victim groups.
 
+## What the data say
+
+- **Nine in ten reported crimes have no arrest on record.** Across roughly 3
+  million incidents from 2010 through February 2024, about 10.6% show an adult
+  or juvenile arrest. That is a status in this copy of the data, not a final
+  outcome, but it is lower than I expected.
+- **The arrest share has been falling for a decade.** It peaked near 12.5% in
+  2013 and 2014, declined through 2019, and has stayed below 9% since 2022. The
+  sharpest drop came in 2020 and 2021, which lines up with the pandemic and the
+  policing changes that followed, but the slide was already underway.
+- **A recorded weapon roughly triples the arrest rate**, 19.2% versus 6.2%.
+  Knives sit above firearms at the top of the list. One plausible reading is
+  that knife incidents are close quarters with the suspect still present, but I
+  did not test that. The source counts bodily force as a weapon, so this group
+  is broader than armed crime.
+- **Time of day matters more than time of year.** Arrest rates peak in the
+  early morning hours, roughly 1 to 3 AM, and bottom out around midday.
+  Month-to-month differences are small by comparison.
+- **Police area spans 7.6% to 14.9%**, with Harbor highest. I read this as
+  differences in the mix of crimes reported in each area, not as a measure of
+  police performance.
+- **Reports listing more than one offense are far more likely to show an
+  arrest.** Part of this is probably circular: an arrest generates charges, and
+  charges add offense codes to the report.
+- **Incident details only weakly predict arrest.** The best model finds about
+  55% of recorded arrests while being right roughly one time in four. What
+  determines an arrest appears to lie mostly downstream of the report: witness
+  cooperation, physical evidence, and whether a suspect is known or present.
+- **The victim-group check did not point where the usual narrative would
+  predict.** The model found arrests most reliably for incidents with Hispanic
+  victims (recall 0.67) and least reliably where victim sex was recorded as X
+  or descent as unknown (0.37 to 0.44). Unknown victim fields are common in
+  property crimes with no one present, which are rarely cleared, so I read this
+  as a data-quality pattern rather than a fairness finding. These are
+  descriptive comparisons on historical records, not evidence about any
+  individual or group.
+
 ## Research question
 
 Which details about a reported crime in Los Angeles are related to whether an

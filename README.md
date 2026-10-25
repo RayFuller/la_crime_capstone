@@ -257,6 +257,24 @@ cross-validation accuracy and selected settings are:
 | Logistic regression | 0.691 | C = 10 |
 | Decision tree | 0.677 | Depth = 8, minimum leaf = 100, gini, balanced weights |
 
+The logistic-regression coefficients give a readable picture of what the
+models are using. The multiple-offense flag is the strongest positive signal,
+followed by Part II / other offenses, department-store premises and aggravated
+assault. The strongest negative signals are a known victim age,
+larceny-theft, victim sex recorded as X and no recorded weapon. I read the
+positive group as incidents where a suspect is typically present or detained
+on the spot: a store security hold, an assault with the parties still at the
+scene, or a drug or weapons offense discovered during a stop. The negative
+group is dominated by property crimes reported after the fact with no suspect
+in view. The age result surprised me; incidents with a recorded victim age
+are less likely to show an arrest, which I think reflects the same split,
+since many Part II offenses have no individual victim and therefore no age.
+The tree and the neural network cannot be read this directly, but their
+validation and test scores track the logistic model closely, which suggests
+they are leaning on the same handful of fields.
+
+![Largest logistic regression coefficients](images/model_logistic_coefficients.png)
+
 At the validation threshold, the neural network was selected with precision
 0.251 and recall 0.514 at a threshold of 0.64. It leads the tree's recall
 (0.469) on this validation sample; this is a sample-specific comparison, not
@@ -321,6 +339,16 @@ for other incident characteristics.
 
 ## Recommendations and next steps
 
+- **Treat the multiple-offense field as an outcome, not an input, in any
+  future analysis.** It is recorded after an arrest adds charges, so it leaks
+  the result it is meant to predict. The tree ablation shows recall drops from
+  0.513 to 0.455 without it, which is a measure of how much of the model's
+  apparent skill comes from that leak.
+- **Improve victim-field completeness before drawing group comparisons.**
+  Incidents with unknown victim sex or descent are the hardest to classify
+  and are concentrated in property crimes. Any analysis of arrest disparities
+  by victim group should first separate these records or report them as their
+  own category.
 - If the analysis continues, check which fields are available at the intended
   prediction time and remove or clearly justify fields that may be updated after
   the incident.

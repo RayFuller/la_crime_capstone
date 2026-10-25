@@ -359,8 +359,7 @@ for other incident characteristics.
   reporting practices. Compare precision, recall, and subgroup sample counts
   before making any broader claim.
 - Keep model changes only when they improve the preselected validation criteria
-  consistently. A larger neural network alone did not demonstrate a reliable
-  advantage.
+  consistently.
 
 ## Limitations and interpretation
 

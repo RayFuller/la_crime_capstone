@@ -105,7 +105,8 @@ juvenile other (`JO`). Zero means **no arrest recorded in this copy of the data*
 not that an arrest will never occur. Older cases may have had more time to reach
 an arrest than newer cases.
 
-Large raw CSVs and Parquet files are deliberately excluded from Git.
+The raw CSVs (about 940 MB combined) and the generated Parquet files exceed
+GitHub's file size limits and are excluded from Git.
 The executed notebook outputs and figures are included for inspection without
 downloading the data. The cleaning notebook documents how to rebuild the inputs.
 

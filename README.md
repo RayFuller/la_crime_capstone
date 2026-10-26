@@ -422,6 +422,5 @@ the planned logistic-regression baseline, a decision tree, KNN, a small neural
 network, validation-based threshold selection, and a limited victim-group
 performance check.
 
-Spatial clustering and broader prospective validation remain
-outside this report. The local course-material archive is reference material
-and excluded from the project submission.
+Spatial clustering and broader prospective validation remain outside this
+report, though division-level maps of the area results are included.
